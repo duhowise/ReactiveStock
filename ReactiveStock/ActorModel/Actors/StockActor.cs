@@ -22,8 +22,8 @@ namespace ReactiveStock.ActorModel.Actors
             _priceLookupChild=Context.ActorOf(Context.DI().Props<StockPriceLookupActor>());
 
 
-            Receive<SubScribeToNewStockPricesMessage>(message => _subscribers.Add(message.Subscriber));
-            Receive<UnSubScribeFromNewStockPriceMessage>(message => _subscribers.Remove(message.Subscriber));
+            Receive<SubscribeToNewStockPricesMessage>(message => _subscribers.Add(message.Subscriber));
+            Receive<UnSubscribeFromNewStockPricesMessage>(message => _subscribers.Remove(message.Subscriber));
             Receive<RefreshStockPriceMessage>(message => _priceLookupChild.Tell(message));
            
             

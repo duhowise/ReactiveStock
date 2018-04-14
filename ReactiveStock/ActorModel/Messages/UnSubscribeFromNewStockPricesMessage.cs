@@ -2,11 +2,11 @@
 
 namespace ReactiveStock.ActorModel.Messages
 {
-    public class UnSubScribeFromNewStockPriceMessage
+    public class UnSubscribeFromNewStockPricesMessage
     {
         public IActorRef Subscriber { get; private set; }
 
-        public UnSubScribeFromNewStockPriceMessage(IActorRef unsubcribingActor)
+        public UnSubscribeFromNewStockPricesMessage(IActorRef unsubcribingActor)
         {
             Subscriber = unsubcribingActor;
         }
